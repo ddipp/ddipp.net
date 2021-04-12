@@ -13,16 +13,16 @@ export default defineComponent({
   name: 'ToogleSeen',
   computed: {
     seen() {
-      return store.state.seen;
+      return store.state.seen.seen;
     },
   },
   methods: {
     reverseSeen() {
-      store.dispatch('reverseSeen');
+      store.dispatch('seen/reverseSeen');
     },
   },
   mounted() {
-    store.dispatch('get_seen');
+    store.dispatch('seen/get_seen');
   },
 });
 </script>

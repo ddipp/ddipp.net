@@ -15,16 +15,16 @@ export default defineComponent({
   computed: {
     message: {
       get() {
-        return store.state.message;
+        return store.state.message.message;
       },
       set(value) {
-        store.commit('updateMessage', value);
+        store.commit('message/updateMessage', value);
       },
     },
   },
   methods: {
     reverseMessage() {
-      store.commit('reverseMessage');
+      store.commit('message/reverseMessage');
     },
   },
 });

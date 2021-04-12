@@ -26,14 +26,14 @@ export default defineComponent({
   },
   computed: {
     list() {
-      return store.state.list;
+      return store.state.li.list;
     },
   },
   methods: {
     addToList(newListItem) {
       const newelem = newListItem.trim();
       if (newelem !== '') {
-        store.commit('addToList', newListItem);
+        store.commit('li/addToList', newListItem);
         this.newListItem = '';
       }
     },
