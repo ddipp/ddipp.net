@@ -1,0 +1,10 @@
+.venv/
+*.sublime-workspace
+# *.sublime-project
+__pycache__
+*.db
+migrations
+productionconfig.py
+init_db.sh
+# dist/
+pop.py
