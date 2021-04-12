@@ -4,5 +4,5 @@ module.exports = {
   productionSourceMap: false,
 /*  axios: {
     baseURL: development ? 'http://localhost:5000/' : 'https://ddipp.net/',
-  },*/
+  }, */
 };

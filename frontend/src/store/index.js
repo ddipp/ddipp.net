@@ -1,9 +1,12 @@
 import { createStore } from 'vuex';
 import axios from 'axios';
+import counter from './modules/counter';
 
 export default createStore({
+  modules: {
+    counter,
+  },
   state: {
-    count: '',
     message: 'Reverse me!',
     seen: true,
     list: [
@@ -22,28 +25,10 @@ export default createStore({
         state.commit('setSeen', response.data);
       });
     },
-    Dincrement(state) {
-      axios.post('api/counter/increment').then((response) => {
-        state.commit('setCount', response.data);
-      });
-    },
-    Dincrement10(state) {
-      axios.post('api/counter/increment10').then((response) => {
-        state.commit('setCount', response.data);
-      });
-    },
-    get_counter(state) {
-      axios.get('api/counter').then((response) => {
-        state.commit('setCount', response.data);
-      });
-    },
   },
   mutations: {
     addToList(state, newListItem) {
       state.list.push({ text: newListItem });
-    },
-    setCount(state, n) {
-      state.count = n;
     },
     reverseMessage(state) {
       state.message = state.message
@@ -57,7 +42,5 @@ export default createStore({
     setSeen(state, n) {
       state.seen = n;
     },
-  },
-  modules: {
   },
 });

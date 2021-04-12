@@ -18,19 +18,19 @@ export default defineComponent({
   name: 'Counter',
   computed: {
     count() {
-      return store.state.count; // state.count;
+      return store.state.counter.count; // state.count;
     },
   },
   methods: {
     increment() {
-      store.dispatch('Dincrement');
+      store.dispatch('counter/Dincrement');
     },
     increment10() {
-      store.dispatch('Dincrement10');
+      store.dispatch('counter/Dincrement10');
     },
   },
   mounted() {
-    store.dispatch('get_counter');
+    store.dispatch('counter/get_counter');
   },
 });
 </script>
