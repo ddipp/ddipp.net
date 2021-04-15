@@ -1,7 +1,7 @@
 import { createStore } from 'vuex';
 import counter from './modules/counter';
 import message from './modules/message';
-import li from './modules/li';
+import listelements from './modules/listelements';
 import seen from './modules/seen';
 
 export default createStore({
@@ -9,7 +9,7 @@ export default createStore({
     counter,
     message,
     seen,
-    li,
+    listelements,
   },
   state: {
   },
