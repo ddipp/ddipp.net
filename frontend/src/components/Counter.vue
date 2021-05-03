@@ -18,7 +18,7 @@ export default defineComponent({
   name: 'Counter',
   computed: {
     count() {
-      return store.state.counter.count; // state.count;
+      return store.state.counter.count;
     },
   },
   methods: {

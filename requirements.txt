@@ -1,3 +1,6 @@
 flask
 flask-cors
 flask-redis
+flask-migrate
+flask-sqlalchemy
+flask-jwt-extended[asymmetric_crypto]
