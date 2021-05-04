@@ -4,3 +4,4 @@ flask-redis
 flask-migrate
 flask-sqlalchemy
 flask-jwt-extended[asymmetric_crypto]
+psycopg2-binary
