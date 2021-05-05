@@ -26,7 +26,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   // Проверяем в meta маршрута requiresAuth
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    console.log('required auth');
+    // console.log('required auth');
     if (localStorage.getItem('jwt') == null) {
       next({
         path: '/login',
