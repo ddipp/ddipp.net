@@ -12,12 +12,12 @@ export default {
   },
   actions: {
     reverseSeen(state) {
-      axios.post('api/seen').then((response) => {
+      axios.post('seen').then((response) => {
         state.commit('setSeen', response.data);
       });
     },
     get_seen(state) {
-      axios.get('api/seen').then((response) => {
+      axios.get('seen').then((response) => {
         state.commit('setSeen', response.data);
       });
     },
