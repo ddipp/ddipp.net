@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HelloWorld from '@/views/HelloWorld.vue';
 import Home from '@/views/Home.vue';
+import Login from '@/views/Login.vue';
 
 const routes = [
   {
@@ -16,6 +17,11 @@ const routes = [
       requiresAuth: true,
     },
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
 ];
 
 const router = createRouter({
@@ -26,7 +32,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   // Проверяем в meta маршрута requiresAuth
   if (to.matched.some((record) => record.meta.requiresAuth)) {
-    // console.log('required auth');
+    // Проверям токен JWT
     if (localStorage.getItem('jwt') == null) {
       next({
         path: '/login',
