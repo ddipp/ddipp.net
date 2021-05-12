@@ -22,10 +22,14 @@ export default {
           state.commit('setToken', response.data.access_token);
           state.commit('setUsername', response.data.username);
         })
+        /* eslint no-unused-vars: ["error", { "args": "none" }] */
         .catch((err) => {
           localStorage.removeItem('token');
           state.commit('setToken', '');
-          console.log(err);
+          state.commit('setUsername', '');
+          // console.log('err message');
+          // const r = err;
+          // console.log(r);
         });
     },
   },
