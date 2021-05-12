@@ -1,10 +1,44 @@
 <template>
-  <div class="hello">
-    Login page
-  </div>
+ <div>
+   <form @submit.prevent="login(username, password)">
+     <h1>Sign in</h1>
+     <label>Username</label>
+     <input required v-model="username" type="text" placeholder="Name"/>
+     <label>Password</label>
+     <input required v-model="password" type="password" placeholder="Password"/>
+     <button type="submit">Login</button>
+   </form>
+   <p>Token: {{ token }}</p>
+   <p>Username: {{ usernamest }}</p>
+ </div>
 </template>
 
 <script>
+import { defineComponent } from 'vue';
+import store from '@/store';
+
+export default defineComponent({
+  name: 'Login',
+  data() {
+    return {
+      username: '',
+      password: '',
+    };
+  },
+  computed: {
+    token() {
+      return store.state.auth.token;
+    },
+    usernamest() {
+      return store.state.auth.username;
+    },
+  },
+  methods: {
+    login(username, password) {
+      store.dispatch('auth/login', { username, password });
+    },
+  },
+});
 </script>
 
 <style scoped>

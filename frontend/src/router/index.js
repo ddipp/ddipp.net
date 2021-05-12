@@ -33,11 +33,13 @@ router.beforeEach((to, from, next) => {
   // Проверяем в meta маршрута requiresAuth
   if (to.matched.some((record) => record.meta.requiresAuth)) {
     // Проверям токен JWT
-    if (localStorage.getItem('jwt') == null) {
+    if (localStorage.getItem('token') == null) {
       next({
         path: '/login',
         params: { nextUrl: to.fullPath },
       });
+    } else {
+      next();
     }
   } else { // В мета маршрута нет требования авторизации
     next();
