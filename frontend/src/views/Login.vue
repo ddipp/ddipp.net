@@ -10,6 +10,7 @@
    </form>
    <p>Token: {{ token }}</p>
    <p>Username: {{ usernamest }}</p>
+   <p>Status: {{ status }}</p>
  </div>
 </template>
 
@@ -21,8 +22,8 @@ export default defineComponent({
   name: 'Login',
   data() {
     return {
-      username: '',
       password: '',
+      username: '',
     };
   },
   computed: {
@@ -31,6 +32,9 @@ export default defineComponent({
     },
     usernamest() {
       return store.state.auth.username;
+    },
+    status() {
+      return store.state.auth.status;
     },
   },
   methods: {

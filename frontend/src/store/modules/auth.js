@@ -5,6 +5,7 @@ export default {
   state: () => ({
     token: localStorage.getItem('token') || '',
     username: '',
+    status: '',
   }),
   mutations: {
     setToken(state, n) {
@@ -12,6 +13,9 @@ export default {
     },
     setUsername(state, n) {
       state.username = n;
+    },
+    setStatus(state, n) {
+      state.status = n;
     },
   },
   actions: {
@@ -21,15 +25,13 @@ export default {
           localStorage.setItem('token', response.data.access_token);
           state.commit('setToken', response.data.access_token);
           state.commit('setUsername', response.data.username);
+          state.commit('setStatus', 'Ok');
         })
-        /* eslint no-unused-vars: ["error", { "args": "none" }] */
         .catch((err) => {
           localStorage.removeItem('token');
           state.commit('setToken', '');
           state.commit('setUsername', '');
-          // console.log('err message');
-          // const r = err;
-          // console.log(r);
+          state.commit('setStatus', err);
         });
     },
   },
