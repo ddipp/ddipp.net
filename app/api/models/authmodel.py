@@ -10,3 +10,6 @@ class UserModel(db.Model):
     def save_to_db(self):
         db.session.add(self)
         db.session.commit()
+
+    def check_password(self, password):
+        return self.password == password
