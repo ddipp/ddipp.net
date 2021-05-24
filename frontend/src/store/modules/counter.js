@@ -11,18 +11,18 @@ export default {
     },
   },
   actions: {
-    Dincrement(state) {
-      axios.post('counter/increment').then((response) => {
+    async Dincrement(state) {
+      await axios.post('counter/increment').then((response) => {
         state.commit('setCount', response.data);
       });
     },
-    Dincrement10(state) {
-      axios.post('counter/increment10').then((response) => {
+    async Dincrement10(state) {
+      await axios.post('counter/increment10').then((response) => {
         state.commit('setCount', response.data);
       });
     },
-    get_counter(state) {
-      axios.get('counter').then((response) => {
+    async get_counter(state) {
+      await axios.get('counter').then((response) => {
         state.commit('setCount', response.data);
       });
     },
