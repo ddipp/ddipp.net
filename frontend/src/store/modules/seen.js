@@ -11,13 +11,13 @@ export default {
     },
   },
   actions: {
-    reverseSeen(state) {
-      axios.post('api/seen').then((response) => {
+    async reverseSeen(state) {
+      await axios.post('seen').then((response) => {
         state.commit('setSeen', response.data);
       });
     },
-    get_seen(state) {
-      axios.get('api/seen').then((response) => {
+    async get_seen(state) {
+      await axios.get('seen').then((response) => {
         state.commit('setSeen', response.data);
       });
     },

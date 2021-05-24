@@ -18,7 +18,7 @@ export default defineComponent({
   name: 'Counter',
   computed: {
     count() {
-      return store.state.counter.count; // state.count;
+      return store.state.counter.count;
     },
   },
   methods: {
@@ -35,7 +35,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .counter {
   color: blue;
 }

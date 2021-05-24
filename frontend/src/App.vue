@@ -1,25 +1,26 @@
 <template>
-  <div>
-    <List />
-    <Counter />
-    <Message />
-    <ToogleSeen />
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/he">Hello World</router-link>
   </div>
+    <router-view></router-view>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import List from '@/components/List.vue';
-import Counter from '@/components/Counter.vue';
-import Message from '@/components/Message.vue';
-import ToogleSeen from '@/components/ToogleSeen.vue';
-
-export default defineComponent({
-  components: {
-    List,
-    Counter,
-    Message,
-    ToogleSeen,
-  },
-});
 </script>
+
+<style>
+#nav {
+  padding: 5px;
+  text-align: center;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>
