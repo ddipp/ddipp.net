@@ -12,7 +12,7 @@ def login():
     user = UserModel.query.filter_by(username=username).one_or_none()
 
     if not user or not user.check_password(password):
-        return jsonify("Wrong username or password"), 401
+        return jsonify("Wrong username or password!"), 401
 
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token, username=username)
